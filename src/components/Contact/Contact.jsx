@@ -1,5 +1,6 @@
 import { IoPerson } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
+import css from "./Contact.module.css";
 
 export default function Contact({ person, onDelete }) {
   return (

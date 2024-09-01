@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Form, Field, Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import style from "./ContactForm.module.css";
+import css from "./ContactForm.module.css";
 
 const initialValues = {
   name: "",
@@ -42,37 +42,31 @@ export default function ContactForm({ updateContactList }) {
       initialValues={initialValues}
       validationSchema={phoneBookCheck}
     >
-      <Form className={style.contactForm} autoComplete="off">
-        <h1 className={style.formTitle}>Contact Form</h1>
-        <div className={style.group}>
+      <Form autoComplete="off">
+        <h1>Contact Form</h1>
+        <div className={css.wrap}>
           <Field
-            className={style.formField}
+            className={css.formField}
             type="text"
             name="name"
             id={`${idLabel}-'name'`}
             placeholder=" "
           />
-          <label className={style.formLabel} htmlFor={`${idLabel}-'name'`}>
-            Name
-          </label>
+          <label htmlFor={`${idLabel}-'name'`}>Name</label>
           <ErrorMessage name="name" component="span" />
         </div>
-        <div className={style.group}>
+        <div className={css.wrap}>
           <Field
-            className={style.formField}
+            className={css.formField}
             type="string"
             name="number"
             id={`${idLabel}-'number'`}
             placeholder=" "
           />
-          <label className={style.formLabel} htmlFor={`${idLabel}-'number'`}>
-            Number
-          </label>
+          <label htmlFor={`${idLabel}-'number'`}>Number</label>
           <ErrorMessage name="number" component="span" />
         </div>
-        <button className={style.formButton} type="submit">
-          Add contact
-        </button>
+        <button type="submit">Add contact</button>
       </Form>
     </Formik>
   );

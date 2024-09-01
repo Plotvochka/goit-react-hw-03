@@ -1,8 +1,8 @@
-// import { Formik } from "formik";
 import ContactForm from "../ContactForm/ContactForm";
 import SearchBox from "../SearchBox/SearchBox";
 import ContactList from "../ContactList/ContactList";
 import { useState, useEffect } from "react";
+import css from "./App.module.css";
 
 const listPerson = [
   { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
@@ -40,7 +40,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className={css.container}>
       <h1>Phonebook</h1>
       <ContactForm updateContactList={addNewPerson} />
       <SearchBox value={filter} onFilter={setFilter} />
